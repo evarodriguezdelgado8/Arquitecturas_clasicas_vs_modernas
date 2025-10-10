@@ -13,6 +13,7 @@
 <body>
   <p><a href="index.html">← Volver al inicio</a></p>
   <h1 id="nombre">Cargando...</h1>
+  <p><img id="img" src=" " /></p>
   <p><span class="label">Precio:</span> <span id="precio"></span></p>
   <p><span class="label">Categoría:</span> <a id="categoria" href="#"></a></p>
   <p id="descripcion"></p>
@@ -37,6 +38,7 @@
         document.title = p.nombre;
         document.getElementById('nombre').textContent = p.nombre;
         document.getElementById('precio').textContent = `${p.precio.toFixed(2)} €`;
+        document.getElementById('img').src= p.img;
 
         // Obtener nombre de la categoría
         const categorias = await fetchJSON(`${API}?resource=categorias`);
